@@ -1,0 +1,37 @@
+<div class="container">
+  <form>
+    <input type="text"  placeholder="IdSessao"    class="form-control" name="idSessao"    [(ngModel)]="sessao.idSessao"/>
+    <input type="text"  placeholder="Voto"        class="form-control" name="voto"        [(ngModel)]="sessao.voto"/>
+    <input type="text"  placeholder="IdCliente"   class="form-control" name="idCliente"   [(ngModel)]="sessao.Cliente"/>
+    <input type="text"  placeholder="Cpf"         class="form-control" name="cpf"         [(ngModel)]="sessao.Cliente"/>
+    <input type="text"  placeholder="NomeCliente" class="form-control" name="nomeCliente" [(ngModel)]="sessao.Cliente"/>
+
+    <input type="button" value="Cadastrar" *ngIf="btnCadastrar"  class="btn btn-primary" (click)="cadastrar()">
+    <input type="button" value="Alterar"   *ngIf="!btnCadastrar"  class="btn btn-warning">
+
+  </form>
+
+      <table class="table" *ngIf="tabela">
+        <thead>
+            <tr>
+              <th>Id da tabela</th>
+              <th>Id da sessão</th>
+              <th>Voto</th>
+              <th>ClienteId</th>
+              <th>Cpf do cliente</th>
+              <th>Nome do cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of sessoes; index as i">
+             <td>{{i+1}}</td>
+             <td>{{s.idSessao}}</td>
+             <td>{{s.voto}}</td>
+             <td>{{s.Cliente}}</td>
+             <td>{{s.Cliente}}</td>
+             <td>{{s.Cliente}}</td>
+             <!-- <td><button class="btn btn-primary" (click)="selecionarCliente(i)">Selecionar</button></td> -->
+          </tr>
+        </tbody>
+    </table>
+</div>
